@@ -12,12 +12,13 @@ export default function StatsPage() {
   const [method, setMethod] = useState<'4d6' | 'standard'>(() => {
     return (localStorage.getItem('dnd_stats_method') as '4d6' | 'standard') || '4d6';
   });
-  const [character, setCharacter] = useState<any>(null);
-
-  useEffect(() => {
+  const [character, setCharacter] = useState<any>(() => {
     const saved = localStorage.getItem('dnd_character');
-    if (saved) setCharacter(JSON.parse(saved));
-  }, []);
+    try {
+      if (saved) return JSON.parse(saved);
+    } catch {}
+    return null;
+  });
 
   useEffect(() => {
     localStorage.setItem('dnd_stats', JSON.stringify(stats));
