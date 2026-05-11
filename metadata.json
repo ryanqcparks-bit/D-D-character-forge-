@@ -1,0 +1,6 @@
+{
+  "name": "D&D Character Forge",
+  "description": "A mobile-first D&D tool that lets you randomly generate characters, roll ability scores using 4d6 drop lowest, and roll an array of common polyhedral dice.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
