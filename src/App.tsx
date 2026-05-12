@@ -32,10 +32,9 @@ export default function App() {
   };
 
   return (
-    <div className="flex justify-center min-h-screen bg-[#3d2b1f] font-sans">
-      <div className="w-full max-w-md bg-[#f2ead3] shadow-2xl min-h-screen flex flex-col relative overflow-hidden select-none">
-
-        <header className="bg-[#f2ead3] border-b-2 border-[#c4b494] px-6 py-4 sticky top-0 z-20 flex flex-col">
+    <div className="w-full bg-[#f2ead3] min-h-screen font-sans flex justify-center text-[#3d2b1f] selection:bg-[#708238]/30">
+      <div className="w-full max-w-2xl flex flex-col relative overflow-hidden shadow-none bg-[#f2ead3] min-h-screen">
+        <header className="bg-[#f2ead3] border-b-2 border-[#c4b494] px-6 py-4 sticky top-0 z-20 flex flex-col shrink-0">
            <h1 className="text-3xl font-black tracking-tight text-[#5c4033] font-serif uppercase tracking-widest text-center">CHARACTER FORGE</h1>
         </header>
 
@@ -45,14 +44,13 @@ export default function App() {
           {activeTab === 'story' && <StoryPage />}
         </main>
 
-        <div className="absolute bottom-6 left-4 right-4 z-20">
-          <nav className="bg-[#fffcf0] border-2 border-[#c4b494] rounded-3xl flex justify-around px-2 shadow-xl">
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-xl z-20">
+          <nav className="bg-[#fffcf0] border-2 border-[#c4b494] rounded-3xl flex justify-around px-2 shadow-xl mx-auto">
              <NavItem tab="character" icon={UserCircle2} label="Hero" />
              <NavItem tab="stats" icon={Swords} label="Stats" />
              <NavItem tab="story" icon={BookOpen} label="Story" />
           </nav>
         </div>
-
       </div>
     </div>
   );
